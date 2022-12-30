@@ -8,8 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
   const onSuccess = (credentialResponse)=> {
     let decoded = jwt_decode(credentialResponse.credential);
-    console.log(decoded)
-    localStorage.setItem('user',JSON.stringify(decoded))
+    localStorage.setItem('user',JSON.stringify(decoded));
     const {name, aud, picture } = decoded;
     const doc = {
       _id: aud,
@@ -17,6 +16,8 @@ const Login = () => {
       userName: name,
       image: picture,
     }
+    console.log('1', doc)
+    console.log('2', decoded);
     client.createIfNotExists(doc).then(()=> {
       navigate('/', {replace: true })
     })
