@@ -2,7 +2,6 @@ import React from 'react';
 import jwt_decode from 'jwt-decode';
 import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
-import { FcGoogle } from 'react-icons/fc';
 import { client } from '../client';
 const Login = () => {
   const navigate = useNavigate();
@@ -16,8 +15,6 @@ const Login = () => {
       userName: name,
       image: picture,
     }
-    console.log('1', doc)
-    console.log('2', decoded);
     client.createIfNotExists(doc).then(()=> {
       navigate('/', {replace: true })
     })
