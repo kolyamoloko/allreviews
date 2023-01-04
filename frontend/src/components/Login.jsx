@@ -19,7 +19,6 @@ const Login = () => {
       navigate('/', {replace: true })
     })
   }
-    
   return (
     <div className="flex justify-center items-center flex-col h-screen">
       <h1>AllReviews</h1>

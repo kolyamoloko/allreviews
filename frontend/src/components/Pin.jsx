@@ -10,7 +10,6 @@ import { client, urlFor } from '../client';
 const Pin = ({ pin }) => {
   const [postHovered, setPostHovered] = useState(false);
   const [savingPost, setSavingPost] = useState(false);
-
   const navigate = useNavigate();
 
   const { postedBy, image, _id, destination } = pin;

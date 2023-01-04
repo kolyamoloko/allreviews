@@ -190,3 +190,8 @@ const query = `*[_type == 'pin' && '${userId}' in save[].userId ] | order(_creat
 }`;
 return query;
 };
+
+export const userQuery = (userId) => {
+  const query = `*[_type == "user" && _id == '${userId}']`;
+  return query;
+};

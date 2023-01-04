@@ -16,7 +16,6 @@ const CreatePin = ({ user }) => {
   const [imageAsset, setImageAsset] = useState(null);
   const [wrongImageType, setWrongImageType] = useState(false);
   const navigate = useNavigate();
-
   const uploadImage = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile.type === 'image/png' || selectedFile.type === 'image/svg' || selectedFile.type === 'image/jpeg' || selectedFile.type === 'image/gif' || selectedFile.type === 'image/tiff') {

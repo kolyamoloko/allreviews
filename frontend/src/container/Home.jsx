@@ -11,17 +11,15 @@ const Home = () => {
   const scrollRef = useRef(null);
   const [user, setUser] = useState(null);
   const userInfo = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
-
+  
   useEffect(() => {
     client.fetch(`*[_type == "user" && _id == '${userInfo?.aud}']`).then((data) => {
       setUser(data[0]);
     })
   })
-
   useEffect(() => {
     scrollRef.current.scrollTo(0, 0)
   }, [])
-  
   return (
     <div className="flex bg-gray-50 flex-row flex-col h-screen transaction-height duration-75 ease-out">
       <div className="hidden h-screen flex-initial">
